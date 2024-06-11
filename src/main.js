@@ -16,8 +16,8 @@ const refs = {
 };
 
 let query = '';
-let currentPage = '';
-let totalPages = '';
+let currentPage = 0;
+let totalPages = 0;
 
 const gallery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -45,6 +45,7 @@ function onSubmit(e) {
   if (!query) {
     return;
   }
+  observer.unobserve(refs.target);
   currentPage = 1;
   refs.loader.classList.remove('disable');
   refs.gallery.innerHTML = '';
