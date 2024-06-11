@@ -1,4 +1,6 @@
+@import url('../../node_modules/modern-normalize/modern-normalize.css');
 @import url('./reset.css');
+
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -14,4 +16,135 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+
+
+.search-form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  font: inherit;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #3381ca;
+  width: 100%;
+}
+
+input,
+button[type="submit"] {
+  height: 40px;
+  border-radius: 5px;
+  padding: 10px;
+  border-color: transparent;
+  outline: none;
+}
+
+input {
+  width: 300px;
+}
+
+input:hover,
+input:focus {
+  border-color: rgb(255, 61, 0);
+}
+
+button[type="submit"] {
+  display: inline-block;
+  background-color: rgb(255, 61, 0);
+  width: 100px;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: rgba(255, 61, 0, 0.8);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -35%) rotate(45deg);
+  background: #fff;
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 24px solid rgb(255, 61, 0);
+  animation: prixClipFix 2s infinite linear;
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+  }
+}
+
+.disable {
+  display: none;
+}
+
+/* .wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+} */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  margin-top: 80px;
+}
+
+.gallery__item {
+  width: 320px;
+  flex-basis: calc((100% - 40px) / 5);
+  border-radius: 0px 0px 4px 4px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.gallery__link {
+  text-decoration: none;
+}
+
+.info {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.info-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
 }
