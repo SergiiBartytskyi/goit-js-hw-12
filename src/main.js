@@ -17,6 +17,7 @@ const refs = {
 
 let query = '';
 let currentPage = '';
+let totalPages = '';
 
 const gallery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
@@ -58,7 +59,7 @@ function onSubmit(e) {
         observer.observe(refs.target);
         gallery.refresh();
 
-        const totalPages = Math.ceil(
+        totalPages = Math.ceil(
           response.data.totalHits / response.data.hits.length
         );
 
@@ -67,7 +68,6 @@ function onSubmit(e) {
           onEndOfResults();
         }
       } else {
-        // observer.unobserve(refs.target);
         onError();
       }
     })
@@ -89,15 +89,10 @@ function onLoad(entries, observer) {
             render(response.data.hits)
           );
 
-          const totalPages = Math.ceil(
-            response.data.totalHits / response.data.hits.length
-          );
-
           if (currentPage === totalPages) {
             observer.unobserve(refs.target);
             onEndOfResults();
           }
-
           gallery.refresh();
         })
         .catch(err => console.log(err));
