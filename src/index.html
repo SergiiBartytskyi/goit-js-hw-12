@@ -7,10 +7,26 @@
     <title>Goit-js-hw-12</title>
   </head>
   <body>
-    <h2>Home Work variant:</h2>
-    <ul>
-      <li><a href="./main1.html">Variant-1</a></li>
-      <li><a href="./main2.html">Variant-2</a></li>
-    </ul>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="gallery"></div>
+
+    <div class="loader"></div>
+
+    <!-- для першого варіанту -->
+    <button type="button">Load more</button>
+
+    <!-- для 2 варіанту -->
+    <!-- <div class="js-guard"></div> -->
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
