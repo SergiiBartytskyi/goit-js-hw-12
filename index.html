@@ -5,12 +5,32 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Goit-js-hw-12</title>
+    <script type="module" crossorigin src="/goit-js-hw-12/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-b0d10f48.js">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/vendor-1cd1f9d9.css">
+    <link rel="stylesheet" href="/goit-js-hw-12/assets/index-2dee957f.css">
   </head>
   <body>
-    <h2>Home Work variant:</h2>
-    <ul>
-      <li><a href="./main1.html">Variant-1</a></li>
-      <li><a href="./main2.html">Variant-2</a></li>
-    </ul>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="gallery"></div>
+
+    <div class="loader"></div>
+
+    <!-- для першого варіанту -->
+    <button type="button">Load more</button>
+
+    <!-- для 2 варіанту -->
+    <!-- <div class="js-guard"></div> -->
+
+    
   </body>
 </html>
