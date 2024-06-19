@@ -81,6 +81,16 @@ function onLoad() {
   fetchQuery(query, currentPage)
     .then(response => {
       refs.gallery.insertAdjacentHTML('beforeend', render(response.data.hits));
+
+      const { height: cardHeight } = document
+        .querySelector('.gallery')
+        .firstElementChild.getBoundingClientRect();
+
+      window.scrollBy({
+        top: cardHeight * 2 + 190,
+        behavior: 'smooth',
+      });
+
       refs.btnLoad.classList.remove('disable');
       if (currentPage === totalPages) {
         refs.btnLoad.classList.add('disable');
