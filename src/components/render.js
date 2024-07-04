@@ -1,4 +1,4 @@
-function render(arr) {
+export function render(arr) {
   return arr
     .map(
       ({
@@ -33,5 +33,3 @@ function render(arr) {
     )
     .join('');
 }
-
-export default render;

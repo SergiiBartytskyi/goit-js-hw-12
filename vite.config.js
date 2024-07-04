@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default defineConfig(({ command }) => {
   return {
