@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { apiKey } from './apiKey';
 import { BASE_URL } from './url';
 
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
 
 export class FetchAPI {
   constructor() {
