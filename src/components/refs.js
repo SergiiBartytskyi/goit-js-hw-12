@@ -3,4 +3,5 @@ export const refs = {
   gallery: document.querySelector('.gallery'),
   btnLoad: document.querySelector('button[type="button"]'),
   loader: document.querySelector('.loader'),
+  target: document.querySelector('.js-guard'),
 };
